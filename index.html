@@ -1,501 +1,83 @@
-html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>Club Toluca NFC</title>
-
-<meta name="theme-color" content="#D5001C">
-<meta name="description" content="Edición NFC Oficial Club Deportivo Toluca">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:linear-gradient(180deg,#5a000c,#9e0015,#d5001c,#ffffff);
-color:white;
-text-align:center;
-overflow-x:hidden;
-min-height:100vh;
-}
-
-.container{
-padding:20px;
-}
-
-.club-logo{
-width:130px;
-margin:10px auto 20px;
-display:block;
-filter:drop-shadow(0 0 15px rgba(255,255,255,.4));
-}
-
-.card-fc{
-position:relative;
-width:92%;
-max-width:360px;
-height:530px;
-margin:20px auto;
-border-radius:28px;
-overflow:hidden;
-box-shadow:
-0 0 35px rgba(255,255,255,.25),
-0 0 60px rgba(213,0,28,.35);
-animation:floatCard 5s ease-in-out infinite;
-}
-
-@keyframes floatCard{
-50%{
-transform:translateY(-8px);
-}
-}
-
-.card-bg{
-position:absolute;
-inset:0;
-background:
-linear-gradient(135deg,
-#7a0011 0%,
-#d5001c 35%,
-#ffffff 70%,
-#c9a227 100%);
-}
-
-.card-bg::after{
-content:"";
-position:absolute;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-background:
-linear-gradient(
-120deg,
-transparent 25%,
-rgba(255,255,255,.35) 50%,
-transparent 75%
-);
-animation:shine 7s linear infinite;
-}
-
-@keyframes shine{
-from{
-transform:translateX(-100%) rotate(20deg);
-}
-to{
-transform:translateX(100%) rotate(20deg);
-}
-}
-
-.card-player{
-position:absolute;
-bottom:90px;
-left:50%;
-transform:translateX(-50%);
-width:85%;
-max-height:320px;
-object-fit:contain;
-z-index:2;
-}
-
-.placeholder{
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:90px;
-height:100%;
-opacity:.35;
-}
-
-.card-info{
-position:absolute;
-bottom:0;
-width:100%;
-padding:18px;
-background:
-linear-gradient(
-180deg,
-transparent,
-rgba(0,0,0,.92)
-);
-z-index:3;
-}
-
-.card-name{
-font-size:28px;
-font-weight:bold;
-}
-
-.card-details{
-display:flex;
-justify-content:center;
-gap:10px;
-margin-top:10px;
-flex-wrap:wrap;
-}
-
-.card-details span{
-background:rgba(255,255,255,.15);
-padding:7px 12px;
-border-radius:10px;
-backdrop-filter:blur(5px);
-}
-
-.player-box,
-.club-box{
-width:92%;
-max-width:450px;
-margin:25px auto;
-padding:24px;
-border-radius:24px;
-background:
-linear-gradient(
-180deg,
-rgba(0,0,0,.85),
-rgba(122,0,17,.92)
-);
-box-shadow:0 0 18px rgba(0,0,0,.3);
-}
-
-.player-title{
-font-size:28px;
-font-weight:bold;
-margin-bottom:15px;
-}
-
-.btn-premium,
-.btn{
-display:block;
-width:90%;
-max-width:360px;
-margin:12px auto;
-padding:16px;
-border-radius:18px;
-text-decoration:none;
-font-weight:bold;
-position:relative;
-overflow:hidden;
-transition:.35s;
-}
-
-.btn-premium{
-background:
-linear-gradient(
-135deg,
-#7a0011,
-#d5001c,
-#ffffff
-);
-color:#111;
-}
-
-.btn-premium:hover{
-transform:translateY(-3px) scale(1.02);
-}
-
-.btn-premium::before{
-content:"";
-position:absolute;
-left:-120%;
-top:0;
-width:60%;
-height:100%;
-background:rgba(255,255,255,.35);
-transform:skewX(-25deg);
-animation:btnshine 4s infinite;
-}
-
-@keyframes btnshine{
-to{
-left:160%;
-}
-}
-
-.btn{
-background:
-linear-gradient(
-135deg,
-#d5001c,
-#ffffff
-);
-color:#111;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-}
-
-.separador{
-height:8px;
-margin:30px 0;
-border-radius:5px;
-background:
-linear-gradient(
-90deg,
-#7a0011,
-#ffffff,
-#d5001c,
-#ffffff,
-#7a0011
-);
-}
-
-.small{
-line-height:1.7;
-font-size:15px;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:20px;
-}
-
-.stat{
-background:rgba(255,255,255,.1);
-padding:12px;
-border-radius:12px;
-}
-
-.stat strong{
-display:block;
-font-size:22px;
-margin-bottom:5px;
-}
-
-.footer{
-padding:25px;
-font-size:14px;
-opacity:.9;
-}
+body{font-family:Arial;background:linear-gradient(180deg,#5a000c,#9e0015,#d5001c,#fff);color:#fff;text-align:center;margin:0}
+.container{padding:20px}
+.card-fc{position:relative;width:92%;max-width:360px;height:530px;margin:20px auto;border-radius:28px;overflow:hidden;box-shadow:0 0 35px rgba(255,255,255,.25)}
+.card-bg{position:absolute;inset:0;background:linear-gradient(135deg,#7a0011,#d5001c,#fff,#c9a227)}
+.card-player{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);width:90%;height:320px;object-fit:cover;border-radius:20px;z-index:2}
+.card-info{position:absolute;bottom:0;width:100%;padding:18px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92));z-index:3}
+.btn{display:block;width:90%;max-width:360px;margin:12px auto;padding:16px;border-radius:18px;text-decoration:none;font-weight:bold;background:linear-gradient(135deg,#d5001c,#fff);color:#111}
+.hidden{display:none}
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
-<img
-class="club-logo"
-src="toluca-logo.png"
-alt="Escudo Toluca"
-onerror="this.style.display='none';"
-/>
-
 <div class="card-fc">
-
 <div class="card-bg"></div>
-
-<div class="placeholder" id="placeholder">
-👹
-</div>
-
-<img
-id="player-img"
-class="card-player"
-src=""
-style="display:none"
-alt="Jugador"
-/>
-
+<img id="player-img" class="card-player" src="toluca-club.jpg" alt="Toluca">
 <div class="card-info">
-
-<div id="card-name" class="card-name">
-Club Deportivo Toluca
-</div>
-
-<div class="card-details">
-<span>🔴 Diablos Rojos</span>
-<span>⚽ Liga MX</span>
-</div>
-
+<div id="card-name" style="font-size:28px;font-weight:bold;">Club Deportivo Toluca</div>
+<div>🔴 Diablos Rojos • ⚽ Liga MX</div>
 </div>
 </div>
 
-<div class="player-box">
-
-<div id="premium-title" class="player-title">
-🔥 Edición Oficial Toluca NFC
+<div id="player-buttons">
+<a id="btn-instagram" class="btn" href="#">📸 Instagram Oficial</a>
+<a id="btn-highlights" class="btn" href="#">🎥 Mejores Momentos</a>
+<a id="btn-stats" class="btn" href="#">📊 Estadísticas del Jugador</a>
+<a id="btn-history" class="btn" href="#">⭐ Trayectoria</a>
 </div>
 
-<a id="btn-instagram" class="btn-premium" href="#">
-📸 Instagram Oficial
-</a>
-
-<a id="btn-highlights" class="btn-premium" href="#">
-🎥 Mejores Momentos
-</a>
-
-<a id="btn-stats" class="btn-premium" href="#">
-📊 Estadísticas del Club
-</a>
-
-<a id="btn-history" class="btn-premium" href="#">
-🏆 Historia y Títulos
-</a>
-
-</div>
-
-<div class="club-box">
-
-<h2>
-🏆 Club Deportivo Toluca
-</h2>
-
-<p class="small">
-Uno de los clubes más exitosos del fútbol mexicano.
-Fundado en 1917, Toluca ha construido una rica tradición
-competitiva y una de las aficiones más apasionadas del país.
-</p>
-
-<div class="stats">
-
-<div class="stat">
-<strong>10</strong>
-Ligas MX
-</div>
-
-<div class="stat">
-<strong>1917</strong>
-Fundación
-</div>
-
-<div class="stat">
-<strong>👹</strong>
-Diablos
-</div>
-
-</div>
-
-</div>
-
-<div class="separador"></div>
-
-<a class="btn" href="https://tolucafc.com">
-🌐 Sitio Oficial
-</a>
-
-<a class="btn" href="https://www.instagram.com/tolucafc">
-📸 Instagram Oficial
-</a>
-
-<a class="btn" href="https://www.youtube.com/@TolucaFC">
-▶️ YouTube Oficial
-</a>
-
-<a class="btn" href="https://www.google.com/search?q=toluca+proximo+partido">
-📅 Próximo Partido
-</a>
-
-<div class="separador"></div>
-
-<a class="btn" href="https://www.google.com/search?q=toluca+calendario">
-🗓️ Calendario
-</a>
-
-<a class="btn" href="https://www.google.com/search?q=tabla+liga+mx">
-📊 Tabla Liga MX
-</a>
-
-<a class="btn" href="https://www.google.com/search?q=palmares+toluca">
-🏆 Palmarés
-</a>
-
-<a class="btn" href="https://www.google.com/search?q=estadio+nemesio+diez">
-🏟️ Estadio Nemesio Diez
-</a>
-
-<div class="footer">
-Club Deportivo Toluca NFC Edition
-</div>
-
+<a class="btn" href="https://tolucafc.com">🌐 Sitio Oficial</a>
+<a class="btn" href="https://www.instagram.com/tolucafc">📸 Instagram Oficial del Club</a>
+<a class="btn" href="https://www.youtube.com/@TolucaFC">▶️ YouTube Oficial</a>
+<a class="btn" href="https://www.google.com/search?q=toluca+proximo+partido">📅 Próximo Partido</a>
+<a class="btn" href="https://www.google.com/search?q=toluca+calendario">🗓️ Calendario</a>
+<a class="btn" href="https://www.google.com/search?q=tabla+liga+mx">📊 Tabla Liga MX</a>
+<a class="btn" href="https://www.google.com/search?q=palmares+toluca">🏆 Palmarés</a>
+<a class="btn" href="https://www.google.com/search?q=estadio+nemesio+diez">🏟️ Estadio Nemesio Díez</a>
 </div>
 
 <script>
-
-/*
-==================================================
-PLANTILLA PREPARADA PARA FUTUROS JUGADORES
-==================================================
-Ejemplo:
-
-?player=vega
-
 const players = {
 vega:{
-name:"Jugador",
+name:"Alexis Vega",
 image:"vega.png",
-instagram:"",
-highlights:"",
-stats:"",
-history:""
+instagram:"https://www.instagram.com/tolucafc",
+highlights:"https://www.youtube.com/results?search_query=alexis+vega+toluca",
+stats:"https://www.google.com/search?q=alexis+vega+estadisticas",
+history:"https://www.google.com/search?q=alexis+vega+trayectoria"
+},
+paulinho:{
+name:"Paulinho",
+image:"paulinho.png",
+instagram:"https://www.instagram.com/tolucafc",
+highlights:"https://www.youtube.com/results?search_query=paulinho+toluca",
+stats:"https://www.google.com/search?q=paulinho+toluca+estadisticas",
+history:"https://www.google.com/search?q=paulinho+toluca+trayectoria"
 }
-}
-==================================================
-*/
-
-const players = {};
+};
 
 const params = new URLSearchParams(window.location.search);
 const playerKey = params.get("player");
 
 if(playerKey && players[playerKey]){
-
-const player = players[playerKey];
-
-document.title = player.name + " | Toluca NFC";
-
-document.getElementById("card-name").innerText =
-player.name;
-
-document.getElementById("premium-title").innerText =
-"🔥 " + player.name + " Edition";
-
-document.getElementById("player-img").src =
-player.image;
-
-document.getElementById("player-img").style.display =
-"block";
-
-document.getElementById("placeholder").style.display =
-"none";
-
-document.getElementById("btn-instagram").href =
-player.instagram;
-
-document.getElementById("btn-highlights").href =
-player.highlights;
-
-document.getElementById("btn-stats").href =
-player.stats;
-
-document.getElementById("btn-history").href =
-player.history;
+ const p = players[playerKey];
+ document.title = p.name + " | Toluca NFC";
+ document.getElementById("card-name").innerText = p.name;
+ document.getElementById("player-img").src = p.image;
+ document.getElementById("btn-instagram").href = p.instagram;
+ document.getElementById("btn-highlights").href = p.highlights;
+ document.getElementById("btn-stats").href = p.stats;
+ document.getElementById("btn-history").href = p.history;
+}else{
+ document.getElementById("player-buttons").classList.add("hidden");
 }
-else{
-
-document.getElementById("btn-instagram").href =
-"https://www.instagram.com/tolucafc";
-
-document.getElementById("btn-highlights").href =
-"https://www.youtube.com/results?search_query=toluca+fc";
-
-document.getElementById("btn-stats").href =
-"https://www.google.com/search?q=estadisticas+toluca";
-
-document.getElementById("btn-history").href =
-"https://www.google.com/search?q=historia+toluca+fc";
-}
-
 </script>
-
 </body>
 </html>
